@@ -4,7 +4,7 @@ from httpx import Client
 
 # dict of tested currencies working on the service
 SUPPORTED_CURRENCIES = {
-    "NGN": "Naira",
+    "NGN": "Nigerian Naira",
     "USD": "United States Dollar",
 }
 
