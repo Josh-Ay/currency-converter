@@ -30,7 +30,7 @@ class ConvertTool:
         self.amount = amount
         self.input_cur = input_currency
         self.output_cur = output_currency
-        self.query_string = f'https://google.com/search?q=${input_currency}+rate+to+${output_currency}'
+        self.query_string = f'https://google.com/search?q=${input_currency}+equals+how+many+${output_currency}'
 
     def get_results_from_web(self) -> dict:
 
