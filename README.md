@@ -1,7 +1,7 @@
 # Currency converter API
 Lightweight API for converting currencies.
 
-Live API Link: <a href='https://currency-converter-c2zx.onrender.com' target='_blank' rel='noreferrer noopener'>Currency converter</a>
+Live API Link: <a href='https://kind-plum-hedgehog-robe.cyclic.app' target='_blank' rel='noreferrer noopener'>Currency converter</a>
 
 ### Table of Contents
 - [Supported Currencies](#supported-currencies)
@@ -15,7 +15,7 @@ Live API Link: <a href='https://currency-converter-c2zx.onrender.com' target='_b
 
 ### How to use
 #### GET Currency rate
-``https://currency-converter-c2zx.onrender.com/?amount=50&inputCurrency=USD&outputCurrency=NGN``
+``https://kind-plum-hedgehog-robe.cyclic.app/?amount=50&inputCurrency=USD&outputCurrency=NGN``
 
 <table>
 <thead>
