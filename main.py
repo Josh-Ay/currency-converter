@@ -12,7 +12,7 @@ app.register_error_handler(404, handle_page_not_found)
 
 if __name__ == '__main__':
     # production use
-    app.run()
+    app.run(host='0.0.0.0')
 
     # development use
     # app.run(debug=True, port=6404)
