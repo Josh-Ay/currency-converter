@@ -10,6 +10,7 @@ SUPPORTED_CURRENCIES = {
 
 # element containing result
 ELEMENT_SELECTOR = 'span.FCUp0c.rQMQod'
+ELEMENT_SELECTOR_2 = 'td.sjsZvd.s5aIid.OE1use div.hfgVwf div.BNeawe.s3v9rd.AP7Wnd'
 
 
 class ConvertTool:
@@ -50,7 +51,10 @@ class ConvertTool:
 
             try:
                 # extracting the currency's rate from the span element containing it
-                result_text = soup.select_one(ELEMENT_SELECTOR).text
+                if self.input_cur == list(SUPPORTED_CURRENCIES.keys())[0]:
+                    result_text = soup.select_one(ELEMENT_SELECTOR_2).text
+                else:
+                    result_text = soup.select_one(ELEMENT_SELECTOR).text
                 print(result_text)
                 base_value = result_text.split('= ')[1].split(' ')[0] if '=' in result_text else result_text.split(' ')[
                     0]
