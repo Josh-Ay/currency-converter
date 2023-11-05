@@ -1,7 +1,7 @@
 # Currency converter API
 Lightweight API for converting currencies.
 
-Live API Link: <a href='https://kind-plum-hedgehog-robe.cyclic.app' target='_blank' rel='noreferrer noopener'>Currency converter</a>
+Live API Link: <a href='https://ayoolaa.pythonanywhere.com' target='_blank' rel='noreferrer noopener'>Currency converter</a>
 
 ### Table of Contents
 - [Supported Currencies](#supported-currencies)
@@ -15,7 +15,7 @@ Live API Link: <a href='https://kind-plum-hedgehog-robe.cyclic.app' target='_bla
 
 ### How to use
 #### GET Currency rate
-``https://kind-plum-hedgehog-robe.cyclic.app/?amount=50&inputCurrency=USD&outputCurrency=NGN``
+``https://ayoolaa.pythonanywhere.com/?amount=50&inputCurrency=USD&outputCurrency=NGN``
 
 <table>
 <thead>
