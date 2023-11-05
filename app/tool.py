@@ -10,7 +10,6 @@ SUPPORTED_CURRENCIES = {
 
 # element containing result
 ELEMENT_SELECTOR = 'span.FCUp0c.rQMQod'
-ELEMENT_SELECTOR_2 = 'td.sjsZvd.s5aIid.OE1use div.hfgVwf div.BNeawe.s3v9rd.AP7Wnd'
 
 
 class ConvertTool:
@@ -26,17 +25,24 @@ class ConvertTool:
             },
             follow_redirects=True,
             http2=True,
+            cookies={
+                "language": "en"
+            },
         )
 
         self.amount = amount
         self.input_cur = input_currency
         self.output_cur = output_currency
-        self.query_string = f'https://google.com/search?q=${input_currency}+equals+how+many+${output_currency}'
+        if input_currency == list(SUPPORTED_CURRENCIES.keys())[0]:
+            self.query_string = f'https://google.com/search?q=₦{input_currency}+equals+how+much+{output_currency}'
+        else:
+            self.query_string = f'https://google.com/search?q=${input_currency}+equals+how+much+{output_currency}'
 
     def get_results_from_web(self) -> dict:
 
         try:
             # fetching the results from google
+            print(self.query_string)
             response = self.client.get(self.query_string)
 
             # failed to fetch results from google
@@ -51,10 +57,10 @@ class ConvertTool:
 
             try:
                 # extracting the currency's rate from the span element containing it
-                if self.input_cur == list(SUPPORTED_CURRENCIES.keys())[0]:
-                    result_text = soup.select_one(ELEMENT_SELECTOR_2).text
-                else:
+                try:
                     result_text = soup.select_one(ELEMENT_SELECTOR).text
+                except AttributeError:
+                    result_text = ''
                 print(result_text)
                 base_value = result_text.split('= ')[1].split(' ')[0] if '=' in result_text else result_text.split(' ')[
                     0]
